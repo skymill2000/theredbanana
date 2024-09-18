@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import "./App.css";
+import TtsScreen from "./pages/TtsScreen";
+import AudioStreamer from "./pages/AudioStreamer";
+import GoogleMap from "./pages/GoogleMapPages";
+import UserGoogleMap from "./pages/UserGoogleMap";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        {/* <Route path="/" element={<AudioStreamer />} /> */}
+        <Route path="/tts" element={<TtsScreen />} />
+        <Route path="/google" element={<GoogleMap></GoogleMap>} />
+        <Route path="/user/google" element={<UserGoogleMap></UserGoogleMap>} />
+      </Routes>
+    </Router>
   );
 }
 

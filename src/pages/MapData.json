@@ -1,0 +1,19 @@
+{
+  "rectangleBounds": {
+    "north": 37.57,
+    "south": 37.56,
+    "east": 126.99,
+    "west": 126.98
+  },
+  "rectangleOption": {
+    "fillColor": "blue",
+    "fillOpacity": 0.2,
+    "strokeColor": "blue",
+    "strokeOpacity": 0.5,
+    "strokeWeight": 2,
+    "clickable": false,
+    "draggable": false,
+    "editable": false,
+    "visible": true
+  }
+}
