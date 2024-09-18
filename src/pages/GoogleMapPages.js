@@ -68,7 +68,7 @@ function MyMap() {
   const [mapInfoList, setmapInfoList] = useState([]);
   const [userList, setUserList] = useState([]);
   const rectangleRefs = useRef([]); // Ref 배열을 만들어 각 RectangleF의 참조를 저장
-
+  const token = process.env.REACT_APP_GOOGLE_MAP_TOKEN;
   const onRectangleLoad = (rectangle, index) => {
     rectangleRefs.current[index] = rectangle; // 로드 시 해당 사각형을 참조 배열에 저장
   };
@@ -113,7 +113,7 @@ function MyMap() {
   }, [mapInfoList]);
 
   return (
-    <LoadScript googleMapsApiKey="AIzaSyBGJzK8dNlyQOfzT8cq1taKMrEsR8GCd-8">
+    <LoadScript googleMapsApiKey={token}>
       <GoogleMap
         options={mapOption}
         mapContainerStyle={containerStyle}

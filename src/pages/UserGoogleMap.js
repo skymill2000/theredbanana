@@ -60,11 +60,13 @@ const InfoBar = ({ locationInfo }) => {
 };
 
 const MyMapComponent = ({ userId }) => {
+  const token = process.env.REACT_APP_GOOGLE_MAP_TOKEN;
   const [mapInfoList, setmapInfoList] = useState([]);
   const rectangleRefs = useRef([]); // Ref 배열을 만들어 각 RectangleF의 참조를 저장
+  console.log(token);
 
   const { isLoaded, loadError } = useLoadScript({
-    googleMapsApiKey: "AIzaSyBGJzK8dNlyQOfzT8cq1taKMrEsR8GCd-8", // 구글 맵 API 키 입력
+    googleMapsApiKey: token, // 구글 맵 API 키 입력
   });
 
   const [location, setLocation] = useState(null); // 내 위치
